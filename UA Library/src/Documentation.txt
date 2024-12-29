@@ -1,0 +1,38 @@
+Author: Chelina Obiang & Genesis Benedith
+
+Details for the Library UML Classes:
+
+
+MyLibrary Class:
+The MyLibrary class serves as the main interaction point for users who want to manage a collection of books. This class provides 
+essential methods for adding books, sorting them, suggesting what to read next, and more. It ties into the MyLibraryModel class, 
+which manages the internal data and processes, as well as the Book class, which represents individual book objects. Through 
+encapsulation, these classes work together by restricting direct access to data, instead using public methods for interaction.
+The constructor initializes an empty list of unread books and the library model that will manage the book data.
+Return: Creates a new instance of the MyLibrary class with an empty list of unread books. This method ties into the Book class 
+by creating a new Book object and passing it to the model to handle the data. Only specific methods like addBook(), 
+sortBooksByTitle(), and suggestRead() are provided for interaction, ensuring that the core logic is controlled.
+
+MyLibraryModel Class:
+The MyLibraryModel class is responsible for managing the data related to the library’s unread books. It acts as a data layer 
+that stores, retrieves, and updates the book collection without exposing the internal structure to the MyLibrary class. By 
+separating data handling from user interaction, MyLibraryModel ensures that the logic for storing books is isolated from 
+how users interact with them. The constructor initializes the list of unread books and prepares the model to store book data.
+Return: Creates a new instance of the MyLibraryModel class with an empty list of unread books. All interactions with the 
+unread books list occur through well-defined methods like addBook() and getUnreadBooks(). This hides the internal 
+structure of the list, ensuring that external classes (like MyLibrary) do not access or modify the list directly.
+
+MyLibraryController Class:
+The MyLibraryController class is the controller that manages the interaction between the user and the library system. 
+It connects the MyLibrary class (which handles user interactions) with the MyLibraryModel class (which handles the data). 
+The controller ensures that commands from the user are correctly executed by calling the appropriate methods in 
+MyLibraryModel to modify or retrieve data. The constructor initializes the controller with a reference to the library’s 
+model, allowing it to perform operations on the data.
+model: The instance of MyLibraryModel that the controller will manage.
+Return: A new instance of MyLibraryController tied to a specific model.
+
+Book Class:
+The Book class represents individual books in the library. It stores information about each book’s title and author and 
+provides methods for interacting with that data. The Book class is essential for creating new book entries, which are then 
+managed by the MyLibraryModel class. The constructor initializes a Book object with the provided title and author, along
+with the created rating of zero and read status as false. 
