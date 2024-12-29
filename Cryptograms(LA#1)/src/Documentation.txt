@@ -1,0 +1,22 @@
+Author: Chelina Obiang
+
+Details for the Cryptogram UML Classes:
+
+-Cryptograms Class:
+	In this class I was able to achieve the background works for the project such as reads a text file (input.txt) containing a list of quotes. From 
+	this file, it randomly selects one quote to be used for the cryptogram puzzle. It also create the cryptogram puzzle, this class generates a 
+	mapping of each letter of the alphabet to another letter. This mapping is stored in a HashMap, where each letter is "shuffled" to ensure a 
+	randomized cipher for encryption. The mapping is used to encrypt the selected quote, turning it into a cryptogram.
+	
+-CryptogramController:
+	In this class I was able to incorporate the use of the Cryptograms class to get the puzzle details and handles the user interaction, 
+	ensuring that the guesses are processed correctly and the game progresses smoothly.  It checks whether the game is over by 
+	comparing the user's current guess against the original quote. If the user successfully decrypts the entire quote, the game ends 
+	with a message. Overall, the controller class ties the model and view together for handling user interaction during the cryptogram game.
+	
+-CryptogramModel:
+	In this class, I was able to process the required action for this project which is the core functionality of encrypting and managing 
+	the cryptogram puzzle. Once a quote is selected from the input.txt file, the quote is defined, along with the decrypt (which is the initial
+	blank canvas to start replacing as guesses are correct). As the user attempts to decrypt the quote, this class processes each guess. 
+	When the user makes a correct guess, the corresponding letters in the encrypted quote are replaced with the guessed letters. Incorrect 
+	guesses are handled with feedback, letting the user know that the guess was wrong.
